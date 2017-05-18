@@ -5,15 +5,11 @@ import org.testng.annotations.Test;
 import javax.swing.text.Element;
 
 import static com.codeborne.selenide.Condition.disappear;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-/**
- * Created by malchinskiy on 16.05.2017.
- */
 public class TestMarket {
     @Test
     public void logIn() {
