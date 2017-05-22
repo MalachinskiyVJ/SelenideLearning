@@ -18,6 +18,7 @@ public class TestMarket {
         SelenideElement username = $("#username").shouldBe(visible).setValue("Notus");
         SelenideElement password = $("#password").shouldNot(disappear).setValue("123qweqwe");
         SelenideElement submitButton = $(".btn-link-i");
+        submitButton.click();
     }
 
 }
