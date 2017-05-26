@@ -1,0 +1,807 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic-ext" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/animate.css?050517_2" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/index.css?250517_2" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/intlTelInput.css" />
+	<link rel="icon" type="image/png" href="/lib/images/fav32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/lib/images/fav16.png" sizes="16x16" />
+	<script src="//c.hit.ua/hit?i=7&amp;g=0&amp;x=3&amp;s=1&amp;t=-180&amp;c=1&amp;w=1920&amp;h=1080&amp;d=24&amp;r=&amp;u=http%3A//fex.net/&amp;0.6070311763932275" async=""></script><script src="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-9836568218778040.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PLH5PRL"></script><script src="/lib/doT.min.js"></script>
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/flow.min.js"></script>
+	<script type="text/javascript" src="/lib/jquery.dotdotdot.min.js"></script>
+	<script type="text/javascript" src="/lib/clipboard.min.js"></script>
+	<script src="/lib/moment-with-locales.js"></script>
+	<script type="text/javascript" src="/lib/clamp.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/lib/jq-ui/jquery-ui.min.css?040517" />
+	<script src="/lib/jq-ui/jquery-ui.min.js?040517"></script>
+	<script src="/lib/particleslider.js"></script>
+	<script src="/lib/cookie.js"></script>
+	<script src="/lib/jquery.ba-throttle-debounce.min.js"></script>
+	<script src="/lib/jquery.mousewheel.min.js"></script>
+	<script src="../lib/qrcode.min.js"></script>
+	<script src="/index.js?250517_2"></script>
+	<title data-lang-text="file_exchange_service_fex">Сервис хранения и передачи файлов - FEX.NET</title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PLH5PRL');</script>
+	<!-- End Google Tag Manager -->
+	<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-9836568218778040",
+			enable_page_level_ads: true
+		});
+	</script>
+</head>
+<body>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-96756671-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<div class="header main_header">
+	<div class="wd">
+		<div class="hamb_menu"></div>
+		<div class="left_menu_ct">
+			<div class="menu_bg"></div>
+			<div class="left_menu">
+				<div class="menu_wrap">
+					<div class="top">
+						<div class="hamb_close"></div>
+						<a href="/#!" class="logo">fex.net</a>
+					</div>
+					<ul>
+						<li class="li_create_obj" data-lang-text="create_new_object">Создать объект</li>
+						<li class="li_open_obj">
+							<span data-lang-text="get_files">Получить файлы</span>
+							<div class="inn_menu_input">
+								<input type="tel" autocomplete="off" data-lang-ph="insert_key_cap" placeholder="Введите ключ" name="hash" class="menu_input_key" />
+								<div class="menu_get_key">OK</div>
+							</div>
+						</li>
+						<li><a href="/#!faq" data-lang-text="faq">Ответы на вопросы</a></li>
+						<li class="plus"><a href="#!package">Fex.net Plus</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<a href="/#!" class="logo">fex.net</a>
+		<div class="get">
+			<div class="off" data-lang-text="get">Получить</div>
+			<form class="on" id="get_form">
+				<img src="/lib/images/close.svg" class="get_close" />
+				<input type="tel" autocomplete="off" data-lang-ph="insert_key" placeholder="ВВЕДИТЕ КЛЮЧ" name="hash" class="get_inp" id="token_input" />
+				<input type="submit" class="get_open" id="view" data-lang-val="open" value="Открыть" />
+				<span class="w_definer"></span>
+			</form>
+		</div>
+		<div class="upload" id="create" data-lang-text="new_object">Новый объект</div>
+		<a href="#!home?tab=subscription" data-lang-text="buy_tb" class="header_buy_space" style="display: none;">купить 1TБ</a>
+		<div class="right_buts">
+			<div class="user_login" data-link="login" data-letter="" data-lang-text="login_and_registration">Вход и регистрация</div>
+			<!-- <a href="https://mail.ex.ua" class="mail_link"></a> -->
+			<div class="lang_ct">
+				<div class="lang_but">ru</div>
+			</div>
+			<div class="play_promo"></div>
+		</div>
+	</div>
+	<div class="lang_container">
+			<ul class="wd">
+				<li data-lang="en"><div class="flag" style="background-image: url(/lib/images/flags/gb.svg);"></div><div>English</div></li>
+				<li data-lang="es"><div class="flag" style="background-image: url(/lib/images/flags/es.svg);"></div><div>Español</div></li>
+				<li data-lang="et"><div class="flag" style="background-image: url(/lib/images/flags/ee.svg);"></div><div>Eesti</div></li>
+				<li data-lang="de"><div class="flag" style="background-image: url(/lib/images/flags/de.svg);"></div><div>Deutsch</div></li>
+				<li data-lang="fr"><div class="flag" style="background-image: url(/lib/images/flags/fr.svg);"></div><div>Français</div></li>
+				<li data-lang="it"><div class="flag" style="background-image: url(/lib/images/flags/it.svg);"></div><div>Italiano</div></li>
+				<li data-lang="lv"><div class="flag" style="background-image: url(/lib/images/flags/lv.svg);"></div><div>Latviešu</div></li>
+				<li data-lang="lt"><div class="flag" style="background-image: url(/lib/images/flags/lt.svg);"></div><div>Lietuvių</div></li>
+				<li data-lang="pl"><div class="flag" style="background-image: url(/lib/images/flags/pl.svg);"></div><div>Polski</div></li>
+				<li data-lang="pt"><div class="flag" style="background-image: url(/lib/images/flags/pt.svg);"></div><div>Português</div></li>
+				<li data-lang="tr"><div class="flag" style="background-image: url(/lib/images/flags/tr.svg);"></div><div>Türkçe</div></li>
+				<li data-lang="ua"><div class="flag" style="background-image: url(/lib/images/flags/ua.svg);"></div><div>Українська</div></li>
+				<li data-lang="ar"><div class="flag" style="background-image: url(/lib/images/flags/ae.svg);"></div><div>العربية</div></li>
+				<li data-lang="ru" class="active"><div class="flag" style="background-image: url(/lib/images/flags/ru.svg);"></div><div>Русский</div></li>
+				<li data-lang="id"><div class="flag" style="background-image: url(/lib/images/flags/id.svg);"></div><div>Bahasa</div></li>
+				<li data-lang="zh"><div class="flag" style="background-image: url(/lib/images/flags/cn.svg);"></div><div>汉语</div></li>
+				<li data-lang="vi"><div class="flag" style="background-image: url(/lib/images/flags/vn.svg);"></div><div>Tiếng Việt</div></li>
+				<li data-lang="hi"><div class="flag" style="background-image: url(/lib/images/flags/in.svg);"></div><div>हिन्दी</div></li>
+				<li data-lang="th"><div class="flag" style="background-image: url(/lib/images/flags/th.svg);"></div><div>ภาษาไทย</div></li>
+				<li data-lang="ja"><div class="flag" style="background-image: url(/lib/images/flags/jp.svg);"></div><div>日本語</div></li>
+				<li data-lang="ko"><div class="flag" style="background-image: url(/lib/images/flags/kr.svg);"></div><div>한국어</div></li>
+			</ul>
+		</div>
+	<div class="note_wr">
+		<div class="note" id="note"></div>
+	</div>
+</div>
+<div class="preview_wr" id="draggable_wr">
+	<div class="preview" id="preview">
+		<div class="top">
+			<p class="title" id="preview_fn"></p>
+			<div class="close" id="preview_close"></div>
+		</div>
+		<div class="content"></div>
+	</div>
+</div>
+<!-- <a href='#'>index</a> | <a href='#view/12'>view #12</a> | <a href='#slow'>slow</a> | <a href='#create'>create</a><br> -->
+<div class="popup_bg">
+	<form class="popup pass_popup">
+		<div class="close" id="pass_popup_close"></div>
+		<p class="pp_info"><span data-lang-text="access_to_obj">Доступ к объекту </span><span id="popup_oid_span">123456789123</span> <span data-lang-text="restricted">ограничен</span></p>
+		<div class="ct">
+			<input type="password" name="pass" data-lang-ph="password" placeholder="Пароль" id="pass_inp" />
+			<p class="error_text" id="wrong_pass_text" data-lang-text="wrong_pass" style="display: none;">Неверный пароль</p>
+		</div>
+		<input type="submit" style="display: none" /><br />
+		<div class="confirm" id="pass_view_confirm" data-lang-text="open">Открыть</div>
+	</form>
+</div>
+<div class="popup_bg_max_file">
+	<div class="popup max_file_size">
+		<div class="close" id="max_file_size_close"></div>
+		<p class="pp_info" data-lang-text="max_file_size_msg">Максимальный размер загружаемого файла не должен превышать 200 Гб</p>
+		<div class="confirm" data-lang-text="ok">ok</div>
+	</div>
+</div>
+<div class="full_popup_bg reg_email">
+	<div class="close"></div>
+	<form class="fp_form">
+		<p class="heading" data-lang-text="leave_email">Оставьте ваш E-mail</p>
+		<!--<div class="input_holder">
+            <input placeholder="Ваше имя" type="text" class="name" name="name" value="">
+            <p class="errmsg">Введите ваше имя</p>
+        </div>-->
+		<div class="input_holder mh">
+			<input placeholder="Ваш e-mail" data-lang-ph="your_email" class="mail" type="email" name="mail" value="" />
+			<p class="errmsg" data-lang-text="enter_email">Введите ваш e-mail</p>
+		</div>
+		<div class="success_msg mh" data-lang-text="thanks_premium">Готово! Как только премиум аккаунты станут доступны, мы уведомим Вас об этом.</div>
+		<input class="msg_send reg_email mt" type="submit" value="Отправить" data-lang-val="send" />
+		<div class="btn_close mt" data-lang-text="close">Закрыть</div>
+	</form>
+</div>
+<div class="full_popup_bg promo">
+	<div class="close"></div>
+	<div class="wrap">
+		<video id="promo_video" preload="none" controls=""> <source id="promo_video_source" src="/lib/images/FEX_rus_1080.mp4" type="video/mp4" data-lang-text="old_browser">Ваш браузер не поддерживает видео элемент. Для просмотра видео - обновите браузер.</source></video>
+	</div>
+</div>
+<div class="captcha_popup_bg">
+	<div class="captcha_popup">
+		<div class="head">
+			<h2 data-lang-text="confirm_action">Подтверждение действия</h2>
+			<div class="close"></div>
+		</div>
+		<div class="ct">
+			<div class="captcha_ct">
+				<div class="captcha"></div>
+				<div class="refresh_captcha"></div>
+			</div>
+			<input type="text" class="in_login" name="captcha-code" data-lang-ph="enter_value" placeholder="Введите цифры с картинки" />
+			<div data-token="" data-ajax="" class="enter_captcha btn" data-lang-text="accept">Принять</div>
+		</div>
+	</div>
+</div>
+<div class="main" style="min-height: 693px; height: auto;">
+<div class="body" style="min-height: 915px; margin-bottom: -50px;"><!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH5PRL"
+				  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="bg_main"></div>
+<div class="wd main_wd">
+	<div class="row top">
+		<h1 data-lang-text="file_exchange_service">Сервис хранения и передачи файлов</h1>
+		<div class="container">
+			<div class="upload main_menu_create" data-lang-text="transfer_files">Передать файлы</div>
+			<span class="or"></span>
+			<div class="get">
+				<div id="get_form_main">
+					<i class="key"></i>
+					<input type="tel" autocomplete="off" data-lang-ph="insert_key_cap" placeholder="Введите ключ" name="hash" class="get_inp_main" />
+					<div class="get_open_main" data-lang-text="get">Получить</div>
+				</div>
+			</div>
+		</div>
+		<div class="ability">
+			<div class="container">
+				<div class="ab">
+					<div class="icon cp"></div>
+					<p data-lang-text="tb_per_bucks">1ТБ всего за 1$</p>
+					<p class="with_link buy_more_space" data-lang-text="buy">Купить</p>
+				</div>
+				<div class="ab">
+					<div class="icon an"></div>
+					<p data-lang-text="anon_exchange">Анонимный обмен файлами</p>
+				</div>
+				<div class="ab">
+					<div class="icon cl"></div>
+					<p data-lang-text="online_play">Проигрывание файлов online</p>
+				</div>
+				<div class="ab">
+					<div class="icon un"></div>
+					<p data-lang-text="no_size_limits">Без ограничений по размеру</p>
+				</div>
+				<div class="ab">
+					<div class="icon sc"></div>
+					<p data-lang-text="pass_setting">Установка пароля на передачу файлов</p>
+				</div>
+				<div class="ab">
+					<div class="icon tr"></div>
+					<p data-lang-text="three_reserve">Трехкратное резервирование</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="drop_file_bg dark">
+	<div class="drop_file"></div>
+</div>
+<script>
+    $(document).ready(function(){
+    	function containsFiles(event) {
+            if (event.dataTransfer.types) {
+                for (var i = 0; i &lt; event.dataTransfer.types.length; i++) {
+                    if (event.dataTransfer.types[i] == "Files") {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        fex.setPageForGA('/index.html');
+		fex.setLang();
+        $(window).off('scroll');
+        fex.navChangeClass('.main_link', true);
+        $(window).resize(function () {
+            $(".body").css("min-height", ($(window).height()-20)+"px");
+        });
+        if (!$('.header').hasClass('main_header')) $('.header').addClass('main_header');
+
+        $('.get_open_main').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var self = $(this),
+                value = $('.get_inp_main').val().replace(/ /g,'');
+            try {
+                ga('send',{
+                    hitType: 'event',
+                    eventCategory: 'Main_actions',
+                    eventAction: 'Fetch_files'
+                });
+            } catch(e) {
+                console.log('Google Analytics is blocked by AdBlock');
+            }
+            fex.checkTokenExist(value, self);
+        });
+        $('.main_menu_create').click(function(){
+            try {
+                ga('send',{
+                    hitType: 'event',
+                    eventCategory: 'Main_actions',
+                    eventAction: 'Transfer_files'
+                });
+            } catch(e) {
+                console.log('Google Analytics is blocked by AdBlock');
+            }
+            $('#create').trigger('click');
+        });
+        $('.get_inp_main').on('keyup', function (e) {
+            if(e.keyCode == 13) {
+                $('.get_open_main').trigger('click');
+            }
+        });
+        $('.input_holder input, .input_holder textarea').on('input', function(){
+            $(this).next('.errmsg').hide();
+            $(this).removeClass('err');
+        });
+        $('.buy_more_space').click(function () {
+            try {
+                ga('send',{
+                    hitType: 'event',
+                    eventCategory: 'purchase',
+                    eventAction: 'buy_start_3'
+                });
+            } catch(e) {
+                console.log('Google Analytics is blocked by AdBlock');
+            }
+            if (fex.user != null) {
+                window.location = '#!home?tab=subscription';
+            } else {
+                fex.showLoginInfoPayment = true;
+                window.location = "#!login";
+            }
+        });
+        document.addEventListener("dragover", function( event ) {
+            // prevent default to allow drop
+            event.preventDefault();
+        }, false);
+        var dragging = 0;
+        $("body").on('dragenter', function(event) {
+            dragging++;
+            if(containsFiles(event.originalEvent)) $('.drop_file_bg').addClass('show_it');
+        });
+
+        $("body").on('dragleave', function() {
+            dragging--;
+            if (dragging === 0) {
+                fex.hideDropBg();
+            }
+        });
+        $("body").on("drop", function(event) {
+            dragging = 0;
+        	if(containsFiles(event.originalEvent)) {
+        		fex.filesToUpload = event.originalEvent.dataTransfer.files;
+                fex.hideDropBg();
+                $('#create').trigger('click');
+        	}
+        	event.preventDefault();
+        });
+    });
+
+</script>
+</div>
+</div>
+
+<div class="footer main_ft">
+	<div class="in_top">
+		<div class="wd padded">
+			<div class="block">
+				<h3 data-lang-text="sections">Разделы:</h3>
+				<ul>
+					<!--<li><a href="#" data-lang-text="about_project"></a></li>-->
+					<li><a href="#!package">FEX Plus</a></li>
+					<li><a href="#!faq" data-lang-text="faq">Ответы на вопросы</a></li>
+				</ul>
+			</div>
+			<div class="block">
+				<h3 data-lang-text="rules">Правила:</h3>
+				<ul>
+					<li><a href="#!terms" data-lang-text="terms_of_use">Условия использования</a></li>
+					<li><a href="#!privacy" data-lang-text="privacy_policy">Политика конфиденциальности</a></li>
+				</ul>
+			</div>
+			<div class="block">
+				<h3 data-lang-text="contacts">Контакты:</h3>
+				<ul>
+					<li><span data-lang-text="footer_support">Поддержка:</span> <a class="dif_color" href="mailto:support@fex.net">support@fex.net</a></li>
+					<li><span data-lang-text="footer_cooperation">Сотрудничество:</span> <a class="dif_color" href="mailto:info@fex.net">info@fex.net</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="wd padded bottom">
+		<p class="copyright">© 2017 FEX.NET <span data-lang-text="all_rights_reserved">ВСЕ ПРАВА ЗАЩИЩЕНЫ</span></p>
+		<!--<a class="btm_link main_link" href="#!" data-lang-text="main_page"></a>-->
+		<!--<a class="btm_link faq_link" href="#!faq" data-lang-text="faq"></a>-->
+		<!--<a class="btm_link package_link"  href="#!package">Fex Plus</a>-->
+		<!--<p class="right"><span data-lang-text="footer_support"></span> <a href="mailto:support@fex.net">support@fex.net</a></p>-->
+		<!--<p class="right"><span data-lang-text="footer_cooperation"></span> <a href="mailto:info@fex.net">info@fex.net</a></p>-->
+	</div>
+</div>
+<div class="preloader" style="display: none"><img src="/lib/images/preloader.svg" /></div>
+<ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:0px;height:0px;"></iframe></ins></ins></ins><script type="text/javascript">
+	(function() {
+		'use strict'
+		var langto;
+		var an_timing = 150,
+			to = 0;
+        bodyFixHeight();
+		$(window).resize(function() {
+			var vw = $(window).width(),
+			vh = $(window).height();
+			$("#object").css("min-height", vh-70+"px");
+            bodyFixHeight();
+        })
+
+		// check user
+		fex.checkUser();
+		$('.header .user_login').click(function(){
+			window.location = "#!"+$(this).attr('data-link');
+		});
+		$('#create').click(function() {
+			fex.uploadsAssoc = {};
+			fex.post(fex.ajaxPrefix+'/j_object_create', {}, function (j) {
+				if (j.result) {
+					fex.updateUploadTarget(j.fs_id);
+					fex.token = j.token;
+					fex.object = j;
+					fex.object.upload_size = 0;
+					fex.object.fromMain = true;
+					fex.go(fex.token);
+					console.log(fex.object);
+                    $(".body").removeAttr('style');
+				}
+				else {
+					alert('Failed to create new token!');
+				}
+			});
+		});
+        $('.bottom_nav .btm_link').click(function () {
+            var self = $(this);
+			if(self.hasClass('active')) {
+			    return false;
+			} else {
+                self.parent().find('.btm_link').removeClass('active');
+                self.addClass('active');
+			}
+        });
+
+        // menu manipulation
+		$('.left_menu li').click(function () {
+		    var self = $(this);
+			if (self.hasClass('li_create_obj')) {
+                $('#create').trigger('click');
+            }
+            if (self.hasClass('li_open_obj')) {
+                self.addClass('opened');
+                self.find('.menu_input_key').focus();
+            } else {
+                self.closest('.left_menu_ct').fadeOut(an_timing);
+            }
+        });
+		$('li .menu_get_key').click(function (e) {
+		    e.stopPropagation();
+            clearTimeout(to);
+		    var self = $(this),
+				value = self.prev().val().replace(/ /g,'');
+            $('#token_input').val(value);
+            fex.checkTokenExist(value, self, to);
+        });
+		$('li .menu_input_key').on('keyup', function (e) {
+			if(e.keyCode == 13) {
+				$('li .menu_get_key').trigger('click');
+			}
+        });
+		$(document).on("keyup", function (e) {
+            if (e.keyCode == 27 &amp;&amp; $(".left_menu_ct").is(":visible")) {
+                $(".left_menu_ct").fadeOut(an_timing);
+            }
+        });
+		$('.header_buy_space').click(function () {
+            try {
+                ga('send',{
+                    hitType: 'event',
+                    eventCategory: 'purchase',
+                    eventAction: 'buy_start_1'
+                });
+            } catch(e) {
+                console.log('Google Analytics is blocked by AdBlock');
+            }
+        });
+		$('#get_form').submit(function() {
+			var t = $('#token_input').val().replace(/ /g,'');
+			if (fex.isToken(t)) {
+				fex.token = t;
+				fex.go(fex.token);
+			}
+			else {
+				fex.notify("error", fex.getMessage("key_12"));
+			}
+			return false;
+		});
+
+        $('.hamb_menu').click(function (e) {
+            e.stopPropagation();
+            $(".left_menu_ct").fadeIn(an_timing);
+        });
+        $('.hamb_close, .menu_bg, .logo').click(function () {
+            $(".left_menu_ct").fadeOut(an_timing);
+            if($('li.li_open_obj').hasClass('opened')) {
+                $('li.li_open_obj').removeClass('opened');
+            }
+        });
+
+//		 $('.hamb_close, .menu_bg').click(function () {
+//		     if ($('.left_menu_ct').is(":visible")) {
+//                 $(".left_menu_ct").fadeOut(an_timing);
+//                 if($('li.li_open_obj').hasClass('opened')) {
+//                     $('li.li_open_obj').removeClass('opened');
+//                 }
+//			 }
+//         });
+        $(".left_menu").click(function (e) {
+			e.stopPropagation();
+        });
+		// Получить объект
+		$(".get").click(function() {
+			if(!$(".get .off").hasClass("animated")) {
+				$(".get .off").addClass("animated");
+			}
+		})
+		$(".get .off").click(function() {
+			$(this).parent().addClass("on");
+			$("#token_input").focus();
+		})
+		$(".get .on .get_close").click(function() {
+			$(this).closest(".get").removeClass("on");
+			$("#token_input").val("");
+		})
+		$(".play_promo").click(function () {
+			$('.full_popup_bg.promo').show();
+            $('body').addClass('no_scroll');
+            $('.main, .footer, .bottom_nav, .header').addClass('blurred');
+            if (fex.uLang == "ru" || fex.uLang == "ua") {
+                $('#promo_video_source').attr("src", "/lib/images/FEX_rus_1080.mp4");
+			} else {
+                $('#promo_video_source').attr("src", "/lib/images/FEX_en_1080.mp4");
+			}
+            $("#promo_video").get(0).load();
+            setTimeout(function() {
+                try {
+                    $("#promo_video").get(0).play();
+                } catch(e) {
+                    console.log(e);
+                }
+            }, 250);
+        });
+        // popups
+        $('.full_popup_bg .close').click(function(){
+            $('.main, .footer, .bottom_nav, .header').removeClass('blurred');
+            $('body').removeClass('no_scroll');
+            var cl =  $(this).closest('.full_popup_bg');
+           if (cl.hasClass('reg_email')) {
+               $(this).parent().hide();
+               cl.find('.btn_close').hide();
+               cl.find('.success_msg').hide();
+               cl.find('.msg_send').show();
+               cl.find('.input_holder').show();
+		   } else if (cl.hasClass('promo')) {
+               try {
+                   $("#promo_video").get(0).pause();
+               } catch(e) {
+                   console.log(e);
+               }
+               cl.addClass('close');
+               setTimeout(function() {
+                   cl.removeClass('close').hide();
+               }, 250);
+		   }
+        });
+        $('.captcha_popup .close').click(function () {
+            fex.hidePopupCaptcha();
+            if(fex.currentUI == "view") {
+	        	window.history.back();
+	        }
+        });
+        $('.captcha_popup .in_login').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $(this).closest('.captcha_popup').find('.enter_captcha').trigger('click');
+            }
+        });
+        // send captcha
+        $(".enter_captcha").click(function () {
+        	console.log("CDATA", fex.captchaData);
+            var self = $(this);
+            var captcha_token = self.attr('data-token'),
+                input = self.parent().find('input[name="captcha-code"]');
+                console.log(1);
+            if (self.data('token').length != 0) {
+            	console.log(2);
+                fex.captchaData["captcha_token"] = captcha_token;
+                fex.captchaData["captcha_value"] = input.val();
+                fex.post(fex.captchaUrl, fex.captchaData, function(res) {
+                	if (res.result == 0 &amp;&amp; res.err.id !== 1008) {
+                        fex.hidePopupCaptcha();
+                        fex.captchaCallback(res);
+                    } else if (res.result == 0 &amp;&amp; res.err.id == 1008) {
+                        input.addClass('error');
+                        $('.refresh_captcha').trigger('click');
+                    } else if (res.result == 1) {
+                    	fex.hidePopupCaptcha();
+                    	fex.captchaCallback(res);
+                    }
+                }, true);
+       //          $.ajax(fex.ajaxPrefix + self.attr('data-ajax'),{
+       //              type: "POST",
+       //              data: fex.objToSend
+       //          }).done(function (res) {
+       //              if (res.result == 0 &amp;&amp; res.err.id !== 1008) {
+       //                  fex.hidePopupCaptcha();
+       //              } else if (res.result == 0 &amp;&amp; res.err.id == 1008) {
+       //                  input.addClass('error');
+       //                  $('.refresh_captcha').trigger('click');
+       //              } else if (res.result == 1) {
+       //                  switch (self.attr('data-ajax')) {
+       //                      case "/j_signin":
+       //                          fex.hidePopupCaptcha();
+       //                          fex.notify("success", fex.getMessage("singin_success"));
+       //                          fex.checkUser();
+       //                          if (fex.fromBuySpaceLink) {
+       //                              window.location = "#!home?tab=subscription";
+       //                              fex.fromBuySpaceLink = false;
+       //                          } else {
+       //                              window.location = "#!home";
+       //                          }
+       //                          break;
+       //                      case "/j_signup":
+       //                          if ('login' in fex.objToSend) {
+       //                              $('.sub_step_zero').show();
+       //                              $('.sub_step_one').hide();
+       //                              $('.switcher.authorization').trigger('click');
+       //                              fex.hidePopupCaptcha();
+       //                              var auth = $('.auth_block.lg_block');
+       //                              auth.find('.in_login[name="login"]').val(fex.objToSend['login']);
+       //                              auth.find('.in_login[name="pass"]').val(fex.objToSend['password']);
+       //                              $('.authorization_button').trigger('click');
+       //                              fex.notify("success", fex.getMessage("singup_success"));
+       //                          } else {
+       //                              fex.hidePopupCaptcha();
+       //                              $('.sub_step_zero').hide();
+       //                              $('.sub_step_one').show();
+       //                              $('.info.in_count').show();
+       //                              $('.info.after_count').hide();
+       //                              $('.try_again .wrong_number').show();
+       //                              $('.try_again .not_rcv').hide();
+       //                              var send_code_text = $('.send_code_button').text();
+       //                              var sec_text = $('.info.in_count span[data-lang-text="sec"]').text();
+       //                              var interval_for_send_code = 0;
+       //                              var current_phone = 0;
+       //                              var count = 60;
+       //                              interval_for_send_code = setInterval(function() {
+       //                                  if (!fex.pauseInterval) {
+       //                                      var tmp = count--;
+       //                                      $('.send_code_button').text(send_code_text + ' ... ' + tmp +' '+sec_text);
+       //                                      $(".sec_count").text(tmp);
+       //                                  }
+       //                                  if(count === 0) {
+       //                                      $('.info.in_count').hide();
+       //                                      $('.info.after_count').show();
+       //                                      $('.try_again .wrong_number').hide();
+       //                                      $('.try_again .not_rcv').show();
+       //                                      current_phone = 0;
+       //                                      $('.send_code_button').removeClass('non_active').text(send_code_text);
+       //                                      clearInterval(interval_for_send_code);
+       //                                  }
+       //                              }, 1000);
+       //                          }
+       //                          break;
+							// case "/j_object_info/"+fex.token:
+							//     $('#current_owner_phone').addClass('show').text(res.user.phone);
+       //                          fex.hidePopupCaptcha();
+							//     break;
+							// case "/j_password_reset":
+							//     if ('password' in fex.objToSend) {
+       //                              fex.notify("success", fex.getMessage("pass_changed"));
+       //                              $('.step_one .back_btn').trigger('click');
+							// 	} else {
+       //                              fex.notify("success", fex.getMessage("code_to_sms"));
+       //                              $('.sub_step_zero').hide();
+       //                              $('.sub_step_one').show();
+       //                          }
+       //                          fex.hidePopupCaptcha();
+							//     break;
+       //                      default:
+       //                          fex.hidePopupCaptcha();
+       //                          break;
+       //                  }
+       //              }
+       //              fex.showAjaxErrors(res);
+       //          }).fail(function (res) {
+       //              fex.notify("error", fex.getMessage('uerr'));
+       //          }).always(function (res) {
+       //              delete  fex.objToSend["captcha_token"];
+       //              delete  fex.objToSend["captcha_value"];
+       //          });
+            }
+        });
+        // refresh captcha
+        $('.refresh_captcha').click(function () {
+            fex.createCaptcha(fex.captchaToken, $(".captcha_popup .captcha"));
+            $(this).closest('.captcha_popup').find('.in_login').val('').focus();
+        });
+		// Смена языков
+		$(document).click(function() {
+			$(".lang_list").fadeOut();
+			$(".left_menu_ct").fadeOut(an_timing);
+			$(".upload_more").removeClass("on");
+            $('.lang_but').removeClass('active');
+            $('.lang_container').hide();
+		});
+        $(document).on("touchstart", function() {
+            $(".lang_container").fadeOut();
+            $(".lang_but").removeClass('active');
+        });
+		$(".lang_container li").on("click touchstart", function(e) {
+			e.stopPropagation();
+			var dataLang = $(this).attr("data-lang");
+			fex.lang = dataLang;
+			fex.setLang(dataLang);
+			$(this).parent().find('li').removeClass('active');
+			$(this).addClass('active');
+			createCookie("ulang", dataLang, 365);
+			$(".lang_container").hide();
+			$(".lang_but").removeClass('active');
+		})
+        $(".lang_list, .lang_but").hover(function() {
+            clearTimeout(langto);
+        }, function() {
+            langto = setTimeout(function() {
+                $(".lang_list").fadeOut();
+            }, 250)
+        })
+		$('.lang_but').on('click', function (e) {
+		    e.stopPropagation();
+		    e.preventDefault();
+            $(this).toggleClass('active');
+//            $(".lang_list").fadeToggle(250);
+            if ($(this).hasClass('active')) {
+                $('.lang_container').show();
+			} else {
+                $('.lang_container').hide();
+			}
+        });
+		// tab animation underline
+		$(document).on('click', '.file_cats li', function () {
+            var target = $(this).parent().find('.border_bottom_slider');
+            animateTabSlider(target, $(this));
+            if ($(this).attr('data-filecat') == 'audio' &amp;&amp; $(this).find('.toggle_player').hasClass('hidded')) {
+                target.css('width', $(this).width()+50+"px");
+            }
+        });
+		function animateTabSlider(target, elm) {
+			//$('.border_bottom_slider')
+            target.css({
+                width: elm.width()+"px",
+                left: elm.position().left+"px"
+            });
+        }
+		// hit script
+		function loadJs(src) {
+			var a = document.createElement('script');
+			a.setAttribute('src', src);
+			a.async = 'true';
+			var b = document.getElementsByTagName('script')[0];
+			b.parentNode.insertBefore(a, b);
+		}
+		function countHit() {
+			if (!document.cookie) document.cookie = "b=b";
+			var action = location.hash.replace(/^#\!?/, '');
+			var href = window.location.href;
+			if (fex.isToken(action)) {
+				var adr = href.split('#');
+				href = adr[0] + "#!XXXXXXXXXXXX";
+			}
+			loadJs('//c.hit.ua/hit?i=7' +
+					'&amp;g=0&amp;x=3&amp;s=1' +
+					'&amp;t=' + (new Date()).getTimezoneOffset() +
+					(document.cookie ? '&amp;c=1' : '') +
+					(self != top ? '&amp;f=1' : '') +
+					(navigator.javaEnabled() ? '&amp;j=1' : '') +
+					(typeof(screen) != 'undefined' ? '&amp;w=' + screen.width + '&amp;h=' + screen.height + '&amp;d=' + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth) : '') +
+					'&amp;r=' + escape(document.referrer) +
+					'&amp;u=' + escape(href) +
+					'&amp;' + Math.random()
+			);
+		}
+		countHit();
+		// dom size manipulation
+        function bodyFixHeight() {
+            $(".main").css("min-height", ($(window).height()-242)+"px");
+            if (location.hash.length &lt;= 2) {
+                $(".body").css({"min-height":($(window).height()-120)+"px", "margin-bottom":"-50px"});
+            } else {
+                $(".body").removeAttr('style');
+            }
+        }
+	})()
+</script>
+<style type="text/css">
+	.main {
+		/*margin-bottom: -50px*/
+	}
+
+</style>
+
+
+</body></html>

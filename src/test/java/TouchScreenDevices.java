@@ -1,6 +1,3 @@
-/**
- * Created by malchinskiy on 22.05.2017.
- */
 public class TouchScreenDevices {
 
     private int id;

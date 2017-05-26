@@ -76,7 +76,7 @@ public class SocialNetworks {
     public static void main(String args[])
 
     {
-        SocialNetworks object1 = new SocialNetworks("Facebook", "Mark Zukenberg", 2005);
+        SocialNetworks object1 = new SocialNetworks("Facebook", "Mark Zukenberg", 2004);
         SocialNetworks object2 = new SocialNetworks("vkontakte", "Pavel Durov", 2007);
         System.out.println(object1.getName() + " was found by " + object1.getFounder() + " in " + object1.getCreationyear());
         object2.setFaviconcolour("blue");
